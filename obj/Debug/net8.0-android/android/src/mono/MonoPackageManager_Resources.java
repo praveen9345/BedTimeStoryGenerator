@@ -10,7 +10,6 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Extensions.DependencyInjection.Abstractions.dll",
 		"Microsoft.Extensions.Logging.dll",
 		"Microsoft.Extensions.Logging.Abstractions.dll",
-		"Microsoft.Extensions.Logging.Debug.dll",
 		"Microsoft.Extensions.Options.dll",
 		"Microsoft.Extensions.Primitives.dll",
 		"Microsoft.Maui.Controls.Compatibility.dll",

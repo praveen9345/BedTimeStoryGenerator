@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DKn9YpACR14=",
+  "dgSpecHash": "Tk18v/DKTRk=",
   "success": true,
   "projectFilePath": "E:\\PData\\BedTimeStoryMAUIApp\\BedTimeStory\\BedTimeStory.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,6 @@
     "C:\\Users\\prave\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\prave\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
     "C:\\Users\\prave\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
-    "C:\\Users\\prave\\.nuget\\packages\\microsoft.extensions.logging.debug\\8.0.0\\microsoft.extensions.logging.debug.8.0.0.nupkg.sha512",
     "C:\\Users\\prave\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\prave\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\prave\\.nuget\\packages\\microsoft.graphics.win2d\\1.2.0\\microsoft.graphics.win2d.1.2.0.nupkg.sha512",
