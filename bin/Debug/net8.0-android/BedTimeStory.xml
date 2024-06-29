@@ -4,5 +4,647 @@
         <name>BedTimeStory</name>
     </assembly>
     <members>
+        <member name="T:BedTimeStory.App">
+            <summary>
+                Class representing the cross-platform application.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.App.#ctor(BedTimeStory.IAppService)">
+            <summary>
+                Initializes the application.
+            </summary>
+            <param name="appService">The service used by the application.</param>
+        </member>
+        <member name="M:BedTimeStory.App.OnStart">
+            <summary>
+            Invoked when the application starts.
+            </summary>
+            <remarks>
+            This method is called when the application is launched. It overrides the base class's <see cref="M:BedTimeStory.App.OnStart"/> method
+            to perform necessary initialization tasks for the application. It calls the <c>OnStartAsync</c> method of the
+            associated <see cref="T:BedTimeStory.AppService"/> instance asynchronously.
+            </remarks>
+        </member>
+        <member name="T:BedTimeStory.AppService">
+            <summary>
+            Represents a service responsible for initializing and managing various application components.
+            We use this in favor of the base class to migrate the databases on app start and to initialize
+            the connection to App Center for error logging.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.AppService.#ctor(System.IServiceProvider)">
+            <summary>
+                Initializes the application.
+            </summary>
+            <param name="serviceProvider">The service provider to retrieve registered services.</param>
+        </member>
+        <member name="M:BedTimeStory.AppService.OnStartAsync">
+            <summary>
+                The method used for
+                - Performing the initial download of the ifu
+                - Redirecting to the Login screen.
+                - Setting the default culture
+            </summary>
+        </member>
+        <member name="T:BedTimeStory.IAppService">
+            <summary>
+                Interface of the service with method for starting the service asynchronously.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.IAppService.OnStartAsync">
+            <summary>
+                Performs necessary actions to start the application service asynchronously.
+            </summary>
+            <returns> An awaitable task. </returns>
+        </member>
+        <member name="T:BedTimeStory.AppShell">
+            <summary>
+                AppShell class for describing the visual hierarchy of the application.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.AppShell.#ctor">
+            <summary>
+                AppShell constructor for initializing the component on the target OS.
+            </summary>
+        </member>
+        <member name="T:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.PrivacyPolicyViewModel">
+            <summary>
+                The view model of the privacy policy screen.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.PrivacyPolicyViewModel.#ctor(System.IServiceProvider)">
+            <summary>
+                Initializes a new instance of the <see cref="T:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.PrivacyPolicyViewModel" />.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.PrivacyPolicyViewModel.InitializeAsync">
+            <summary>
+            Initializes the component asynchronously, ensuring proper initialization of general information
+            and notification permissions.
+            </summary>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="T:BedTimeStory.Components.CoreFeatures.Onboarding.Views.PrivacyPolicyView">
+            <summary>
+            The code behind of the privacy policy view.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.CoreFeatures.Onboarding.Views.PrivacyPolicyView.#ctor(BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.PrivacyPolicyViewModel)">
+            <summary>
+             Initializes a new instance of the PrivacyPolicyView class with the specified view model.
+            </summary>
+            <param name="viewModel">The PrivacyPolicyViewModel associated with this view.</param>
+        </member>
+        <member name="T:BedTimeStory.Components.PlatformUtils.ServiceHelper">
+            <summary>
+                This service helper class shall be used if it is not possible to inject the <see cref="T:System.IServiceProvider" /> in a
+                class there it is needed to resolve a specific service. Additionally it can be used in the platform specific code
+                to
+                resolve the services of the app.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.PlatformUtils.ServiceHelper.Services">
+            <summary>
+                This property contains the <see cref="T:System.IServiceProvider" /> of the <see cref="T:Microsoft.Maui.Hosting.MauiApp" /> which needs to be set in
+                <see cref="M:BedTimeStory.Components.PlatformUtils.ServiceHelper.Initialize(System.IServiceProvider)" /> initially.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.PlatformUtils.ServiceHelper.Initialize(System.IServiceProvider)">
+            <summary>
+                This method needs to be called in <see cref="M:BedTimeStory.MauiProgram.CreateMauiApp" /> after the <see cref="T:Microsoft.Maui.Hosting.MauiApp" /> has
+                been builded with the dedicated <see cref="T:Microsoft.Maui.Hosting.MauiAppBuilder" />.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.PlatformUtils.ServiceHelper.GetService``1">
+            <summary>
+                Use this method to get an arbitrary service which has been added as singleton in
+                <see cref="M:BedTimeStory.MauiProgram.RegisterServices(Microsoft.Maui.Hosting.MauiAppBuilder)" /> method.
+            </summary>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Localization.AppResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Localization.AppResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Localization.AppResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Localization.AppResources.AchievementControl_StarLabelTemplateText">
+            <summary>
+              Looks up a localized string similar to {0} Tage.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Localization.AppResources.AchievementViewModel_MotivationalMessageDay14Text">
+            <summary>
+              Looks up a localized string similar to Sie haben seit 14 Tagen 0,0 gepustet! Das ist ein tolles Ergebnis! Machen Sie weiter so! .
+            </summary>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService">
+            <summary>
+                Interface of the service providing navigation functionality.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.Navigate``1">
+            <summary>
+                Navigates to a page.
+            </summary>
+            <typeparam name="T"> The class of the page. </typeparam>
+            <returns> An awaitable task. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.Navigate``1(System.Object)">
+            <summary>
+                Navigates to a page while passing a parameter.
+            </summary>
+            <typeparam name="T"> The class of the page. </typeparam>
+            <param name="parameter"> The parameter to pass. </param>
+            <returns> An awaitable task. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.OpenDialogAndAwaitResultAsync``3(``1)">
+            <summary>
+                This method navigates to a specific page of type T asynchronously.
+            </summary>
+            <param name="parameter"> The parameter to pass.</param>
+            <returns> A task representing the asynchronous navigation operation and returning a result of type TReturn. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.OpenDialogAndAwaitResultAsync``2">
+            <summary>
+                This method navigates to a specific page of type T asynchronously.
+            </summary>
+            <returns> A task representing the asynchronous navigation operation and returning a result of type TReturn. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.Close">
+            <summary>
+                Closes the current view and navigates back to the previous view.
+            </summary>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.CloseDialog``1(``0)">
+            <summary>
+                Closes the current dialog and navigates back in the application.
+            </summary>
+            <param name="result">The dialog result to pass back to the dialog caller.</param>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.Close``1(``0)">
+            <summary>
+                Closes the current view, navigates back to the previous screen and passes the
+                provided parameters.
+            </summary>
+            <param name="parameter">The parameter to pass to the previous view.</param>
+            <returns>A task awaiting the navigation.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.GetPageViewModel``1">
+            <summary>
+                 Get the ViewModel of the previous page.
+            </summary>
+            <typeparam name="T">The type of the ViewModel.</typeparam>
+            <returns>The ViewModel of the specified type, or default if not found.</returns>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.Models.CriticalWorkflow">
+            <summary>
+                Describes the different critical workflows contained in the app.
+            </summary>
+        </member>
+        <member name="F:BedTimeStory.Components.UiFunctionality.Navigation.Models.CriticalWorkflow.BreathSample">
+            <summary>
+                The workflow needed for the user to give a BreathSample.
+            </summary>
+        </member>
+        <member name="F:BedTimeStory.Components.UiFunctionality.Navigation.Models.CriticalWorkflow.Pairing">
+            <summary>
+                The workflow needed to pair a device.
+            </summary>
+        </member>
+        <member name="F:BedTimeStory.Components.UiFunctionality.Navigation.Models.CriticalWorkflow.Unpairing">
+            <summary>
+                The workflow needed to unpair a device.
+            </summary>
+        </member>
+        <member name="F:BedTimeStory.Components.UiFunctionality.Navigation.Models.CriticalWorkflow.Onboarding">
+            <summary>
+                The workflow needed to onboard the user.
+            </summary>
+        </member>
+        <member name="F:BedTimeStory.Components.UiFunctionality.Navigation.Models.CriticalWorkflow.Offboarding">
+            <summary>
+                The workflow needed to offboard the user.
+            </summary>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService">
+            <summary>
+                Implementation of the service providing navigation functionality.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.DialogCloseCompletionSource">
+            <summary>
+                Maintain dialog completion sources to keep track of dialog results.
+                A list is used to enable correct handling of dialog results, even if one dialog is shown on top of another dialog.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.Navigate``1">
+            <summary>
+                Navigates to a page.
+            </summary>
+            <typeparam name="T"> The class of the page. </typeparam>
+            <returns> An awaitable task. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.OpenDialogAndAwaitResultAsync``3(``1)">
+            <summary>
+                This method navigates to a specific dialog of type T and awaits its result.
+            </summary>
+            <remarks>
+                Please make sure to call the corresponding <see cref="M:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService.CloseDialog``1(``0)"/>
+                within the opened dialog, to ensure a correct closure of dialogs.
+            </remarks>
+            <param name="parameter"> The parameter to pass.</param>
+            <returns> A task representing the asynchronous navigation operation and returning a result. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.OpenDialogAndAwaitResultAsync``2">
+            <summary>
+                This method navigates to a specific page of type T asynchronously.
+            </summary>
+            <returns> A task representing the asynchronous navigation operation and returning a result of type TReturn. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.Navigate``1(System.Object)">
+            <summary>
+                Navigates to a page while passing a parameter.
+            </summary>
+            <typeparam name="T"> The class of the page. </typeparam>
+            <param name="parameter"> The parameter to pass. </param>
+            <returns> An awaitable task. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.Close">
+            <summary>
+                Closes the current view and navigates back to the previous view.
+            </summary>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.CloseDialog``1(``0)">
+            <summary>
+                Closes the current dialog and navigates back in the application.
+            </summary>
+            <param name="result">The dialog result to pass back to the dialog caller.</param>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.Close``1(``0)">
+            <summary>
+                Closes the current view, navigates back to the previous screen and passes the
+                provided parameters.
+            </summary>
+            <param name="parameter">The parameter to pass to the previous view.</param>
+            <returns>A task awaiting the navigation.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.ChangePresentation(System.Type)">
+            <summary>
+                Changes the presentation to a new page.
+            </summary>
+            <param name="typeOfPriorViewModel"> The type of the prior view model.</param>
+            <returns> A task representing the asynchronous operation. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.GetPageViewModel``1">
+            <summary>
+                 Get the ViewModel of the previous page.
+            </summary>
+            <typeparam name="T">The type of the ViewModel.</typeparam>
+            <returns>The ViewModel of the specified type, or default if not found.</returns>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel">
+            <summary>
+                The implementation of a base view model that provides general logic and information needed on all screens.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="F:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel._shallCurrentViewModelBeSet">
+            <summary>
+                Gets or sets a value determining whether the current viewmodel shall be set using the <see cref="!:CurrentViewModelProvider"/>.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.NavigationService">
+            <summary>
+                Gets the navigation service to handle navigation throughout the app.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.#ctor(System.IServiceProvider)">
+            <summary>
+                Initializes an instance of the <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider to retrieve registered services.</param>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.InitializeAsync">
+            <summary>
+                Performs initialization tasks for the view model. This method is called when the view model is initialized.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.ViewAppearing">
+            <summary>
+                Sets the viewmodel as the current viewmodel. This method is called when the view appears.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.ViewDisappearing">
+            <summary>
+                This method is called when the view disappears.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.Item(System.String)">
+            <summary>
+                A property enabling the binding of localized resources by resource key.
+                The provided resource key does only need to specify the part behind the underscore
+                as the part before the underscore is automatically set according to the current view model.
+            </summary>
+            <param name="resourceKey">The resource key to get the value for.</param>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.IsBackNavigationEnabled">
+            <summary>
+                Gets or sets a value determining whether back navigation is enabled.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.OnBackButtonPressed">
+            <summary>
+                Handles the back button tap.
+            </summary>
+            <returns>A task handling the back navigation.</returns>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.BackNavigationCommand">
+            <summary>
+                Command for the back button.
+            </summary>
+        </member>
+        <member name="P:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.ShallCurrentViewModelBeSet">
+            <inheritdoc cref="F:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel._shallCurrentViewModelBeSet"/>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`1">
+            <summary>
+                The implementation of a base view model enabling the transfer of a parameter.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`1.#ctor(System.IServiceProvider)">
+            <summary>
+                Initializes an instance of <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider to retrieve registered services.</param>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`1.Prepare(`0)">
+            <summary>
+                Enabled to prepare the current view model with the passed parameter.
+            </summary>
+            <param name="parameter">The parameter object.</param>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`1.ApplyQueryAttributes(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+                Sets the parameters that were passed on navigation.
+            </summary>
+            <param name="query">The parameters that were passed as a dictionary.</param>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2">
+            <summary>
+                The implementation of a base view model enabling the transfer of a parameter and result.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2.#ctor(System.IServiceProvider)">
+            <summary>
+                Initializes an instance of <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider to retrieve registered services.</param>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2.Prepare(`0)">
+            <summary>
+                Enabled to prepare the current view model with the passed parameter.
+            </summary>
+            <param name="parameter">The parameter object.</param>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2.ApplyQueryAttributes(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+                Sets the parameters that were passed on navigation.
+            </summary>
+            <param name="query">The parameters that were passed as a dictionary.</param>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModelResult`1">
+            <summary>
+                The implementation of a base view model enabling the transfer of a result.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModelResult`1.#ctor(System.IServiceProvider)">
+            <summary>
+                Initializes an instance of <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModelResult`1"/> class.
+            </summary>
+            <param name="serviceProvider">The service provider to retrieve registered services.</param>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.MainViewModel">
+            <summary>
+                MainViewModel that inherits from BaseViewModel and is used by Android MainActivity.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.MainViewModel.#ctor(System.IServiceProvider)">
+            <summary>
+                Initializes a new instance of the class <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.MainViewModel"/>.
+            </summary>
+            <param name="serviceProvider">The service provider to retrieve registered services.</param>
+        </member>
+        <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.Views.BaseView">
+            <summary>
+            The implementation of a base view that provides general logic and information needed for all views.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.Views.BaseView.#ctor(BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel)">
+            <summary>
+            The default constructor of BaseView.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.Views.BaseView.OnLoaded(System.Object,System.EventArgs)">
+            <summary>
+                Trigger the view appearing event as soon as the view is loaded.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.Views.BaseView.OnBackButtonPressed">
+            <summary>
+                Handles the back button tap.
+                Prevents the back navigation, if defined in the corresponding view model.
+            </summary>
+            <returns>A value indicating whether back navigation was handled.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.Views.BaseView.OnAppearing">
+             <summary>
+                 Despite the naming <see cref="M:BedTimeStory.Components.UiFunctionality.Navigation.Views.BaseView.OnAppearing"/> is triggered before the view is loaded,
+                 thus we use it for the initialization of the view model and trigger the appearing event
+                 as soon as the view is actually loaded.
+            
+                 Using <see cref="E:Microsoft.Maui.Controls.Page.NavigatedTo"/> would also be an option, but it was
+                 called that early that in some cases it lead to having the previously view model still active.
+             </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.Views.BaseView.OnDisappearing">
+            <summary>
+               Handles the event when the page is being hidden or removed from the display.
+            </summary>
+        </member>
+        <member name="T:BedTimeStory.MauiProgram">
+            <summary>
+                The core start point of the MAUI Program.
+            </summary> 
+        </member>
+        <member name="M:BedTimeStory.MauiProgram.CreateMauiApp">
+            <summary>
+                The main entry point for the MAUI application.
+            </summary>
+            <returns>MAUI application.</returns>
+        </member>
+        <member name="M:BedTimeStory.MauiProgram.RegisterServices(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+                Registers all classes of which the name ends with "Service" 
+                and that have an interface whose name ends with the name of the service.
+            </summary>
+            <param name="builder">The app in which the services are registered.</param>
+        </member>
+        <member name="M:BedTimeStory.MauiProgram.RegisterViewsAndViewModels(Microsoft.Maui.Hosting.MauiAppBuilder)">
+            <summary>
+                Registers all classes of which the name ends with "ViewModel" 
+                and tries to register a matching view for each view model.
+            </summary>
+            <param name="builder">The app builder.</param>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ShallCurrentViewModelBeSet">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ShallCurrentViewModelBeSet" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ShallCurrentViewModelBeSet">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ShallCurrentViewModelBeSet" generated properties.</summary>
+        </member>
     </members>
 </doc>

@@ -60,6 +60,32 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "dependencies": {
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
+            "JWT": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.Maui.Controls": {
               "target": "Package",
               "version": "[8.0.40, )"
@@ -73,6 +99,18 @@
               "target": "Package",
               "version": "[8.0.6, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.8, )"
+            },
+            "modernhttpclient-updated": {
+              "target": "Package",
+              "version": "[3.4.3, )"
             }
           },
           "imports": [
@@ -99,6 +137,32 @@
         "net8.0-ios17.2": {
           "targetAlias": "net8.0-ios",
           "dependencies": {
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
+            "JWT": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.Maui.Controls": {
               "target": "Package",
               "version": "[8.0.40, )"
@@ -112,6 +176,18 @@
               "target": "Package",
               "version": "[8.0.6, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.8, )"
+            },
+            "modernhttpclient-updated": {
+              "target": "Package",
+              "version": "[3.4.3, )"
             }
           },
           "imports": [
@@ -138,6 +214,32 @@
         "net8.0-maccatalyst17.2": {
           "targetAlias": "net8.0-maccatalyst",
           "dependencies": {
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
+            "JWT": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.Maui.Controls": {
               "target": "Package",
               "version": "[8.0.40, )"
@@ -151,6 +253,18 @@
               "target": "Package",
               "version": "[8.0.6, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.8, )"
+            },
+            "modernhttpclient-updated": {
+              "target": "Package",
+              "version": "[3.4.3, )"
             }
           },
           "imports": [
@@ -178,6 +292,32 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
+            "JWT": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.Maui.Controls": {
               "target": "Package",
               "version": "[8.0.40, )"
@@ -185,6 +325,18 @@
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
               "version": "[8.0.40, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.8, )"
+            },
+            "modernhttpclient-updated": {
+              "target": "Package",
+              "version": "[3.4.3, )"
             }
           },
           "imports": [
