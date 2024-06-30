@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BedTimeStory")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e73fc05c4a071896f77317081d68b5a749ac7b1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+361a1b44defb462b7ae75becdf6cefa9f0595fe4")]
 [assembly: System.Reflection.AssemblyProductAttribute("BedTimeStory")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BedTimeStory")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -137,14 +137,9 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:BedTimeStory.Components.UiFunctionality.Localization.AppResources.AchievementControl_StarLabelTemplateText">
+        <member name="P:BedTimeStory.Components.UiFunctionality.Localization.AppResources.PrivacyPolicyViewModel_HeaderText">
             <summary>
-              Looks up a localized string similar to {0} Tage.
-            </summary>
-        </member>
-        <member name="P:BedTimeStory.Components.UiFunctionality.Localization.AppResources.AchievementViewModel_MotivationalMessageDay14Text">
-            <summary>
-              Looks up a localized string similar to Sie haben seit 14 Tagen 0,0 gepustet! Das ist ein tolles Ergebnis! Machen Sie weiter so! .
+              Looks up a localized string similar to Privacy Policy!!.
             </summary>
         </member>
         <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.INavigationService">

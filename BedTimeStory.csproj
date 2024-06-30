@@ -55,6 +55,15 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+    <!-- Register the custom view -->
+	<ItemGroup>
+       <Compile Update="Components\UiFunctionality\Localization\AppResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>AppResources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />

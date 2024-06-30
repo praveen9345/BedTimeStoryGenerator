@@ -34,7 +34,7 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation.ViewModels
         /// <param name="serviceProvider">The service provider to retrieve registered services.</param>
         protected BaseViewModel(IServiceProvider serviceProvider)
         {
-            NavigationService = serviceProvider.GetService<INavigationService>();
+            NavigationService = serviceProvider.GetRequiredService<INavigationService>();
             BackNavigationCommand = new AsyncRelayCommand(OnBackButtonPressed, () => _isBackNavigationEnabled);
         }
 

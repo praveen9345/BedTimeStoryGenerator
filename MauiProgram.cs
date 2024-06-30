@@ -31,7 +31,6 @@
                 .RegisterServices()
                 .RegisterViewsAndViewModels();
 
-
             var app = builder.Build();
 
             // Needs to be initialized after building the app to link the services to the created singletons.

@@ -8,9 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BedTimeStory.Components.UiFunctionality.Localization {
-    using System;
-    
+namespace BedTimeStory.Components.UiFunctionality.Localization
+ {
     
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -39,7 +38,7 @@ namespace BedTimeStory.Components.UiFunctionality.Localization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlcotestRehabApp.Core.Components.UiFunctionality.Localization.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BedTimeStory.Components.UiFunctionality.Localization.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,21 +60,13 @@ namespace BedTimeStory.Components.UiFunctionality.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} Tage.
+        ///   Looks up a localized string similar to Privacy Policy!!.
         /// </summary>
-        public static string AchievementControl_StarLabelTemplateText {
+        public static string PrivacyPolicyViewModel_HeaderText {
             get {
-                return ResourceManager.GetString("AchievementControl_StarLabelTemplateText", resourceCulture);
+                return ResourceManager.GetString("PrivacyPolicyViewModel_HeaderText", resourceCulture);
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized string similar to Sie haben seit 14 Tagen 0,0 gepustet! Das ist ein tolles Ergebnis! Machen Sie weiter so! .
-        /// </summary>
-        public static string AchievementViewModel_MotivationalMessageDay14Text {
-            get {
-                return ResourceManager.GetString("AchievementViewModel_MotivationalMessageDay14Text", resourceCulture);
-            }
-        }
     }
 }
