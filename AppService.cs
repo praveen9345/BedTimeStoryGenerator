@@ -2,7 +2,6 @@ namespace BedTimeStory
 {
     using BedTimeStory.Components.UiFunctionality.Navigation;
     using BedTimeStory.Components.PlatformUtils;
-    using System;
     using BedTimeStory.Components.CoreFeatures.Onboarding.Views;
 
     /// <summary>

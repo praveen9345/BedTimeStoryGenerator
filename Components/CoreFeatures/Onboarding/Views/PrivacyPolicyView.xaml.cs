@@ -15,6 +15,7 @@
         public PrivacyPolicyView(PrivacyPolicyViewModel viewModel):base(viewModel)
         {
             InitializeComponent();
-            BindingContext = viewModel;       }
+            BindingContext = viewModel;
+        }
     }
 }
