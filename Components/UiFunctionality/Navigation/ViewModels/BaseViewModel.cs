@@ -1,5 +1,6 @@
 namespace BedTimeStory.Components.UiFunctionality.Navigation.ViewModels
 {
+    using BedTimeStory.Components.PlatformUtils;
     using CommunityToolkit.Mvvm.ComponentModel;
     using CommunityToolkit.Mvvm.Input;
     using Localization;
@@ -31,10 +32,9 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation.ViewModels
         /// <summary>
         ///     Initializes an instance of the <see cref="BaseViewModel"/> class.
         /// </summary>
-        /// <param name="serviceProvider">The service provider to retrieve registered services.</param>
-        protected BaseViewModel(IServiceProvider serviceProvider)
+        protected BaseViewModel()
         {
-            NavigationService = serviceProvider.GetRequiredService<INavigationService>();
+            NavigationService = ServiceHelper.GetService<INavigationService>();
             BackNavigationCommand = new AsyncRelayCommand(OnBackButtonPressed, () => _isBackNavigationEnabled);
         }
 

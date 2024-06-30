@@ -19,9 +19,9 @@ namespace BedTimeStory
         ///     Initializes the application.
         /// </summary>
         /// <param name="serviceProvider">The service provider to retrieve registered services.</param>
-        public AppService(IServiceProvider serviceProvider)
+        public AppService()
         {
-            _navigationService = serviceProvider.GetRequiredService<INavigationService>();
+            _navigationService = ServiceHelper.GetService<INavigationService>();
         }
        /// <summary>
         ///     The method used for

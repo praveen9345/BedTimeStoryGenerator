@@ -29,6 +29,6 @@ public static class ServiceHelper
     /// </summary>
     public static T GetService<T>()
     {
-        return Services.GetService<T>();
+        return Services.GetRequiredService<T>();
     }
 }

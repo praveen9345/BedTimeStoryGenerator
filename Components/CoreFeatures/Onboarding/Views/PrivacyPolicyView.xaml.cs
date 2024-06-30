@@ -1,7 +1,6 @@
 ﻿namespace BedTimeStory.Components.CoreFeatures.Onboarding.Views
 {
     using UiFunctionality.Navigation.Views;
-    using Microsoft.Maui.Controls.Xaml;
     using ViewModels;
 
     /// <summary>

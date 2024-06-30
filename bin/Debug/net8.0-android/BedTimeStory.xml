@@ -32,7 +32,7 @@
             the connection to App Center for error logging.
             </summary>
         </member>
-        <member name="M:BedTimeStory.AppService.#ctor(System.IServiceProvider)">
+        <member name="M:BedTimeStory.AppService.#ctor">
             <summary>
                 Initializes the application.
             </summary>
@@ -72,7 +72,7 @@
                 The view model of the privacy policy screen.
             </summary>
         </member>
-        <member name="M:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.PrivacyPolicyViewModel.#ctor(System.IServiceProvider)">
+        <member name="M:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.PrivacyPolicyViewModel.#ctor">
             <summary>
                 Initializes a new instance of the <see cref="T:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.PrivacyPolicyViewModel" />.
             </summary>
@@ -325,11 +325,10 @@
                 Gets the navigation service to handle navigation throughout the app.
             </summary>
         </member>
-        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.#ctor(System.IServiceProvider)">
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.#ctor">
             <summary>
                 Initializes an instance of the <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel"/> class.
             </summary>
-            <param name="serviceProvider">The service provider to retrieve registered services.</param>
         </member>
         <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel.InitializeAsync">
             <summary>
@@ -378,11 +377,10 @@
                 The implementation of a base view model enabling the transfer of a parameter.
             </summary>
         </member>
-        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`1.#ctor(System.IServiceProvider)">
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`1.#ctor">
             <summary>
                 Initializes an instance of <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel"/> class.
             </summary>
-            <param name="serviceProvider">The service provider to retrieve registered services.</param>
         </member>
         <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`1.Prepare(`0)">
             <summary>
@@ -401,11 +399,10 @@
                 The implementation of a base view model enabling the transfer of a parameter and result.
             </summary>
         </member>
-        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2.#ctor(System.IServiceProvider)">
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2.#ctor">
             <summary>
                 Initializes an instance of <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2"/> class.
             </summary>
-            <param name="serviceProvider">The service provider to retrieve registered services.</param>
         </member>
         <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModel`2.Prepare(`0)">
             <summary>
@@ -424,22 +421,20 @@
                 The implementation of a base view model enabling the transfer of a result.
             </summary>
         </member>
-        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModelResult`1.#ctor(System.IServiceProvider)">
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModelResult`1.#ctor">
             <summary>
                 Initializes an instance of <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.BaseViewModelResult`1"/> class.
             </summary>
-            <param name="serviceProvider">The service provider to retrieve registered services.</param>
         </member>
         <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.MainViewModel">
             <summary>
                 MainViewModel that inherits from BaseViewModel and is used by Android MainActivity.
             </summary>
         </member>
-        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.MainViewModel.#ctor(System.IServiceProvider)">
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.MainViewModel.#ctor">
             <summary>
                 Initializes a new instance of the class <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.ViewModels.MainViewModel"/>.
             </summary>
-            <param name="serviceProvider">The service provider to retrieve registered services.</param>
         </member>
         <member name="T:BedTimeStory.Components.UiFunctionality.Navigation.Views.BaseView">
             <summary>

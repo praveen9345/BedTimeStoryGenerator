@@ -12,8 +12,7 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation.ViewModels
         /// <summary>
         ///     Initializes an instance of <see cref="BaseViewModel{TParameter,TResult}"/> class.
         /// </summary>
-        /// <param name="serviceProvider">The service provider to retrieve registered services.</param>
-        protected BaseViewModel(IServiceProvider serviceProvider) : base(serviceProvider) {}
+        protected BaseViewModel() {}
 
         /// <summary>
         ///     Enabled to prepare the current view model with the passed parameter.

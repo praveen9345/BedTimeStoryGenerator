@@ -1,11 +1,7 @@
 ﻿namespace BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels
 {
     using System.Threading.Tasks;
-    using CommunityToolkit.Mvvm.ComponentModel;
-    using CommunityToolkit.Mvvm.Input;
     using UiFunctionality.Navigation.ViewModels;
-    using UiFunctionality.Localization;
-    using Views;
 
     /// <summary>
     ///     The view model of the privacy policy screen.
@@ -15,7 +11,7 @@
         /// <summary>
         ///     Initializes a new instance of the <see cref="PrivacyPolicyViewModel" />.
         /// </summary>
-             public PrivacyPolicyViewModel( IServiceProvider serviceProvider) : base(serviceProvider)
+             public PrivacyPolicyViewModel()
         {
             IsBackNavigationEnabled = false;
         }
