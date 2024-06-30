@@ -9,6 +9,18 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <ControlTemplate x:Key="ContentPageTemplate">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Row="0" BackgroundColor="Black" HeightRequest="{OnPlatform Android='0.1', iOS='0.3'}"
+                             HorizontalOptions="FillAndExpand"
+                             Opacity="0.35" />
+                    <ContentPresenter Grid.Row="1"/>
+                </Grid>
+            </ControlTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

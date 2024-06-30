@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views:BaseView xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:views="clr-namespace:BedTimeStory.Components.UiFunctionality.Navigation.Views;assembly=BedTimeStory"
+                x:Class="BedTimeStory.Components.CoreFeatures.Onboarding.Views.PrivacyPolicyView">
+    <views:BaseView.Content>
+        <Grid >
+            <Grid.RowDefinitions>
+                <!-- Header -->
+                <RowDefinition Height="65" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Label
+                AutomationId="TitleLabel"
+                Grid.Row="0" 
+                Margin="20,20,20,0"
+                Text="{Binding [HeaderText]}"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"/>
+
+        </Grid>
+    </views:BaseView.Content>
+</views:BaseView>
