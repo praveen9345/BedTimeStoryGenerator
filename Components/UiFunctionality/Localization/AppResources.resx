@@ -117,8 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  
+  <!--PolicyViewModel-->
   <data name="PrivacyPolicyViewModel_HeaderText" xml:space="preserve">
     <value>Provide the Privacy Policy!! </value>
     <comment>51</comment>
+  </data>
+
+    <!--WlcomeViewModel-->
+    <data name="WelcomeViewModel_WelcomeText" xml:space="preserve">
+    <value>Welcome to DreamTails </value>
+    <comment></comment>
+  </data>
+
+  <data name="WelcomeViewModel_EmailButtonText" xml:space="preserve">
+    <value>SignUp with Email</value>
+    <comment></comment>
+  </data>
+  
+  <data name="WelcomeViewModel_GoogleButtonText" xml:space="preserve">
+  <value>SignUp with Google</value>
+  <comment></comment>
+  </data>
+  
+  <data name="WelcomeViewModel_AlreadyHaveText" xml:space="preserve">
+    <value>Already have an account? Login</value>
+    <comment></comment>
+  </data>
+ 
+  <data name="WelcomeViewModel_LoginButtonText" xml:space="preserve">
+    <value>Login</value>
+    <comment></comment>
   </data>
 </root>

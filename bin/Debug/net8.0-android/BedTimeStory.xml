@@ -84,6 +84,23 @@
             </summary>
             <returns>An awaitable task.</returns>
         </member>
+        <member name="T:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.WelcomeViewModel">
+            <summary>
+                The view model of the welcome screen.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.WelcomeViewModel.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.WelcomeViewModel" />.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.WelcomeViewModel.InitializeAsync">
+            <summary>
+            Initializes the component asynchronously, ensuring proper initialization of general information
+            and notification permissions.
+            </summary>
+            <returns>An awaitable task.</returns>
+        </member>
         <member name="T:BedTimeStory.Components.CoreFeatures.Onboarding.Views.PrivacyPolicyView">
             <summary>
             The code behind of the privacy policy view.
@@ -94,6 +111,17 @@
              Initializes a new instance of the PrivacyPolicyView class with the specified view model.
             </summary>
             <param name="viewModel">The PrivacyPolicyViewModel associated with this view.</param>
+        </member>
+        <member name="T:BedTimeStory.Components.CoreFeatures.Onboarding.Views.WelcomeView">
+            <summary>
+            The code behind of the WelCome View Model.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.CoreFeatures.Onboarding.Views.WelcomeView.#ctor(BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels.WelcomeViewModel)">
+            <summary>
+             Initializes a new instance of the WelComeViewModel class with the specified view model.
+            </summary>
+            <param name="viewModel">The WelComeViewModel associated with this view.</param>
         </member>
         <member name="T:BedTimeStory.Components.PlatformUtils.ServiceHelper">
             <summary>
@@ -120,6 +148,62 @@
                 Use this method to get an arbitrary service which has been added as singleton in
                 <see cref="M:BedTimeStory.MauiProgram.RegisterServices(Microsoft.Maui.Hosting.MauiAppBuilder)" /> method.
             </summary>
+        </member>
+        <member name="T:BedTimeStory.Components.PlatformUtils.Wrappers.INavigationShellWrapper">
+            <summary>
+                Wrapper interface for navigation functionality within a Maui Shell application.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.PlatformUtils.Wrappers.INavigationShellWrapper.GoToAsync(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Navigates to the specified route with optional animation and parameters.
+            </summary>
+            <param name="route">The route to navigate to.</param>
+            <param name="animate">Determines whether the navigation should be animated.</param>
+            <param name="parameters">Optional parameters to pass to the route.</param>
+            <returns>A task that represents the asynchronous navigation operation.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.PlatformUtils.Wrappers.INavigationShellWrapper.GoToAsync(System.String,System.Boolean)">
+            <summary>
+            Navigates to the specified route with optional animation.
+            </summary>
+            <param name="route">The route to navigate to.</param>
+            <param name="animate">Determines whether the navigation should be animated.</param>
+            <returns>A task that represents the asynchronous navigation operation.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.PlatformUtils.Wrappers.INavigationShellWrapper.GetCurrentState">
+            <summary>
+            Gets the current state of the Shell navigation.
+            </summary>
+            <returns>The current <see cref="T:Microsoft.Maui.Controls.ShellNavigationState"/>.</returns>
+        </member>
+        <member name="T:BedTimeStory.Components.PlatformUtils.Wrappers.NavigationShellWrapper">
+            <summary>
+             Wrapper class for provides navigation functionality within a Maui Shell application.
+            </summary>
+        </member>
+        <member name="M:BedTimeStory.Components.PlatformUtils.Wrappers.NavigationShellWrapper.GoToAsync(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Navigates to the specified route with optional animation and parameters.
+            </summary>
+            <param name="route">The route to navigate to.</param>
+            <param name="animate">Determines whether the navigation should be animated.</param>
+            <param name="parameters">Optional parameters to pass to the route.</param>
+            <returns>A task that represents the asynchronous navigation operation.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.PlatformUtils.Wrappers.NavigationShellWrapper.GoToAsync(System.String,System.Boolean)">
+            <summary>
+            Navigates to the specified route with optional animation.
+            </summary>
+            <param name="route">The route to navigate to.</param>
+            <param name="animate">Determines whether the navigation should be animated.</param>
+            <returns>A task that represents the asynchronous navigation operation.</returns>
+        </member>
+        <member name="M:BedTimeStory.Components.PlatformUtils.Wrappers.NavigationShellWrapper.GetCurrentState">
+            <summary>
+            Gets the current state of the Shell navigation.
+            </summary>
+            <returns>The current <see cref="T:Microsoft.Maui.Controls.ShellNavigationState"/>.</returns>
         </member>
         <member name="T:BedTimeStory.Components.UiFunctionality.Localization.AppResources">
             <summary>
@@ -237,6 +321,13 @@
                 Implementation of the service providing navigation functionality.
             </summary>
         </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.#ctor(BedTimeStory.Components.PlatformUtils.Wrappers.INavigationShellWrapper)">
+            <summary>
+                Initializes a new instance of the <see cref="T:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService"/> class
+                with the specified <see cref="T:BedTimeStory.Components.PlatformUtils.Wrappers.INavigationShellWrapper"/>.
+            </summary>
+            <param name="navigationShellWrapper">The navigation shell wrapper.</param>
+        </member>
         <member name="P:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.DialogCloseCompletionSource">
             <summary>
                 Maintain dialog completion sources to keep track of dialog results.
@@ -248,6 +339,14 @@
                 Navigates to a page.
             </summary>
             <typeparam name="T"> The class of the page. </typeparam>
+            <returns> An awaitable task. </returns>
+        </member>
+        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.Navigate``1(System.Object)">
+            <summary>
+                Navigates to a page while passing a parameter.
+            </summary>
+            <typeparam name="T"> The class of the page. </typeparam>
+            <param name="parameter"> The parameter to pass. </param>
             <returns> An awaitable task. </returns>
         </member>
         <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.OpenDialogAndAwaitResultAsync``3(``1)">
@@ -266,14 +365,6 @@
                 This method navigates to a specific page of type T asynchronously.
             </summary>
             <returns> A task representing the asynchronous navigation operation and returning a result of type TReturn. </returns>
-        </member>
-        <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.Navigate``1(System.Object)">
-            <summary>
-                Navigates to a page while passing a parameter.
-            </summary>
-            <typeparam name="T"> The class of the page. </typeparam>
-            <param name="parameter"> The parameter to pass. </param>
-            <returns> An awaitable task. </returns>
         </member>
         <member name="M:BedTimeStory.Components.UiFunctionality.Navigation.NavigationService.Close">
             <summary>

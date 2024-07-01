@@ -31,7 +31,7 @@ namespace BedTimeStory
         public async Task OnStartAsync()
         {
             //await NavigateToFirstViewModelAsync();
-            await _navigationService.Navigate<PrivacyPolicyView>();
+            await _navigationService.Navigate<WelcomeView>();
         }
 
 

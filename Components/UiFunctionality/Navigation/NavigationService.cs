@@ -1,11 +1,24 @@
 namespace BedTimeStory.Components.UiFunctionality.Navigation
 {
+    using BedTimeStory.Components.PlatformUtils.Wrappers;
     
     /// <summary>
     ///     Implementation of the service providing navigation functionality.
     /// </summary>
     public class NavigationService : INavigationService
     {
+        private readonly INavigationShellWrapper _shellWrapper;
+
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="NavigationService"/> class
+        ///     with the specified <see cref="INavigationShellWrapper"/>.
+        /// </summary>
+        /// <param name="navigationShellWrapper">The navigation shell wrapper.</param>
+        public NavigationService(INavigationShellWrapper navigationShellWrapper)
+        {
+            _shellWrapper = navigationShellWrapper;
+        }
+
         /// <summary>
         ///     Maintain dialog completion sources to keep track of dialog results.
         ///     A list is used to enable correct handling of dialog results, even if one dialog is shown on top of another dialog.
@@ -20,8 +33,36 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation
         /// <returns> An awaitable task. </returns>
         public Task Navigate<T>() where T : Page
         {
-            return Shell.Current.GoToAsync(typeof(T).Name, false);
+            return _shellWrapper.GoToAsync( GetShellPath<T>(), false);
         }
+
+        /// <summary>
+        ///     Navigates to a page while passing a parameter.
+        /// </summary>
+        /// <typeparam name="T"> The class of the page. </typeparam>
+        /// <param name="parameter"> The parameter to pass. </param>
+        /// <returns> An awaitable task. </returns>
+        public async Task Navigate<T>(object parameter) where T : Page
+        {
+            var dictionary = new Dictionary<string, object>()
+            {
+                {"parameter", parameter}
+            };
+            await _shellWrapper.GoToAsync( GetShellPath<T>(), false, dictionary);
+        }
+
+        private string GetShellPath<T>(){
+            var name = typeof(T).Name;
+            var location = _shellWrapper.GetCurrentState().Location.ToString();
+
+            if (location.Contains(name))
+            {
+                return location.Substring(0, location.IndexOf(name) + name.Length);
+              
+            }
+            return name;
+        }
+
 
         /// <summary>
         ///     This method navigates to a specific dialog of type T and awaits its result.
@@ -42,11 +83,11 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation
 
             var taskCompletionSource = new TaskCompletionSource<object>();
             DialogCloseCompletionSource.Add(taskCompletionSource);
-            await Shell.Current.GoToAsync(typeof(T).Name, false, dictionary);
+            await _shellWrapper.GoToAsync(typeof(T).Name, false, dictionary);
 
             var value = (TReturn) await taskCompletionSource.Task;
 
-            await Shell.Current.GoToAsync("..", false);
+            await _shellWrapper.GoToAsync("..", false);
 
             return value;
         }
@@ -60,48 +101,23 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation
         {
             var taskCompletionSource = new TaskCompletionSource<object>();
             DialogCloseCompletionSource.Add(taskCompletionSource);
-            await Shell.Current.GoToAsync(typeof(T).Name, false);
+            await _shellWrapper.GoToAsync(typeof(T).Name, false);
 
             var value = (TReturn)await taskCompletionSource.Task;
 
-            await Shell.Current.GoToAsync("..", false);
+            await _shellWrapper.GoToAsync("..", false);
 
             return value;
         }
 
-        /// <summary>
-        ///     Navigates to a page while passing a parameter.
-        /// </summary>
-        /// <typeparam name="T"> The class of the page. </typeparam>
-        /// <param name="parameter"> The parameter to pass. </param>
-        /// <returns> An awaitable task. </returns>
-        public async Task Navigate<T>(object parameter) where T : Page
-        {
-            var dictionary = new Dictionary<string, object>()
-            {
-                {"parameter", parameter}
-            };
-            var name = typeof(T).Name;
-            var location = AppShell.Current.CurrentState.Location.ToString();
-
-            if (location.Contains(name))
-            {
-                var path = location.Substring(0, location.IndexOf(name) + name.Length);
-                await Shell.Current.GoToAsync(path, false, dictionary);
-
-                return;
-            }
-
-            await Shell.Current.GoToAsync(typeof(T).Name, false, dictionary);
-        }
-
+      
         /// <summary>
         ///     Closes the current view and navigates back to the previous view.
         /// </summary>
         /// <returns>An awaitable task.</returns>
         public async Task Close()
         {
-            await Shell.Current.GoToAsync("..", false);
+            await _shellWrapper.GoToAsync("..", false);
         }
 
         /// <summary>
@@ -130,7 +146,7 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation
                 {"parameter", parameter}
             };
 
-            await Shell.Current.GoToAsync("..", false, parameterDictionary);
+            await _shellWrapper.GoToAsync("..", false, parameterDictionary);
         }
 
         /// <summary>
@@ -140,7 +156,7 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation
         /// <returns> A task representing the asynchronous operation. </returns>
         public async Task ChangePresentation(Type typeOfPriorViewModel)
         {
-            await Shell.Current.GoToAsync(typeOfPriorViewModel.Name.Replace("ViewModel", "View"));
+            await _shellWrapper.GoToAsync(typeOfPriorViewModel.Name.Replace("ViewModel", "View"), false);
         }
 
         /// <summary>

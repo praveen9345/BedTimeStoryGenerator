@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views:BaseView xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:views="clr-namespace:BedTimeStory.Components.UiFunctionality.Navigation.Views;assembly=BedTimeStory"
+                x:Class="BedTimeStory.Components.CoreFeatures.Onboarding.Views.WelcomeView"
+                BackgroundImageSource="background_layout.png">    
+    <views:BaseView.Content>
+   <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Margin="0,100,0,0"
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="{Binding [WelcomeText]}"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <!-- Email icon Note: prifix=>&#x and ; is default-->
+            <Button
+                Text="{Binding [EmailButtonText]}"
+                Style="{StaticResource ButtonHeadline}">
+                <Button.ImageSource >
+                    <FontImageSource FontFamily="FluentIcons"
+                                     Glyph="&#xf511;"/>
+                </Button.ImageSource>
+            </Button>
+
+             <!-- Google icon -->
+            <Button
+                Text="{Binding [GoogleButtonText]}"
+                Style="{StaticResource ButtonHeadline}">
+                <Button.ImageSource >
+                    <FontImageSource FontFamily="FluentIcons"
+                                     Glyph="&#xf718;"/>
+                </Button.ImageSource>
+            </Button>
+
+             <!-- Google icon -->
+            <Label
+                Text="{Binding [AlreadyHaveText]}"
+                Style="{StaticResource TextStyle}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+    </views:BaseView.Content>
+</views:BaseView>

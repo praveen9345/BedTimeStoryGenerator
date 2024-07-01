@@ -6,12 +6,8 @@
                 BackgroundImageSource="background_layout.png"
                 >    
     <views:BaseView.Content >
-        <Grid >
-            <Grid.RowDefinitions>
-                <!-- Header -->
-                <RowDefinition Height="65" />
-            </Grid.RowDefinitions>
-
+         <ScrollView Orientation="Vertical">
+        <StackLayout>
             <!-- Header -->
             <Label
                 AutomationId="TitleLabel"
@@ -23,8 +19,11 @@
                 VerticalTextAlignment="Center"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"/>
-
-
-        </Grid>
+                
+        </StackLayout>
+    </ScrollView>
     </views:BaseView.Content>
 </views:BaseView>
+
+
+           

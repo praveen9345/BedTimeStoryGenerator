@@ -1,6 +1,5 @@
 ﻿namespace BedTimeStory.Components.CoreFeatures.Onboarding.ViewModels
 {
-    using System.Threading.Tasks;
     using UiFunctionality.Navigation.ViewModels;
 
     /// <summary>
