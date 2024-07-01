@@ -5,6 +5,7 @@
     using Microsoft.Maui.Controls.Compatibility.Hosting;
     using BedTimeStory.Components.PlatformUtils;
     using System.Reflection;
+    using UraniumUI;
 
     /// <summary>
     ///     The core start point of the MAUI Program.
@@ -23,6 +24,8 @@
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .UseMauiCompatibility()
+                .UseUraniumUI()
+                .UseUraniumUIMaterial()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

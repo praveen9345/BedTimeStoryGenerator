@@ -7,8 +7,7 @@
     <views:BaseView.Content>
    <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+            Padding="20,0,20,20" Spacing ="30">
             <Image
                 Margin="0,100,0,0"
                 Source="dotnet_bot.png"
@@ -26,8 +25,9 @@
                 Text="{Binding [EmailButtonText]}"
                 Style="{StaticResource ButtonHeadline}">
                 <Button.ImageSource >
-                    <FontImageSource FontFamily="FluentIcons"
-                                     Glyph="&#xf511;"/>
+                    <FontImageSource 
+                        FontFamily="FluentIcons"
+                        Glyph="&#xf511;"/>
                 </Button.ImageSource>
             </Button>
 
@@ -41,10 +41,13 @@
                 </Button.ImageSource>
             </Button>
 
-             <!-- Google icon -->
-            <Label
+             <!-- AlreadyHaveText button -->
+            <Button 
+                StyleClass="TextButton"
                 Text="{Binding [AlreadyHaveText]}"
-                Style="{StaticResource TextStyle}"/>
+                TextColor="{StaticResource White}"
+                FontSize ="14"
+                HorizontalOptions="Center"/>
         </VerticalStackLayout>
     </ScrollView>
     </views:BaseView.Content>
