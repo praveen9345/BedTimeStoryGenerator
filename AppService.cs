@@ -17,7 +17,6 @@ namespace BedTimeStory
         /// <summary>
         ///     Initializes the application.
         /// </summary>
-        /// <param name="serviceProvider">The service provider to retrieve registered services.</param>
         public AppService()
         {
             _navigationService = ServiceHelper.GetService<INavigationService>();
@@ -31,7 +30,8 @@ namespace BedTimeStory
         public async Task OnStartAsync()
         {
             //await NavigateToFirstViewModelAsync();
-            await _navigationService.Navigate<WelcomeView>();
+            //await _navigationService.Navigate<ForgetPasswordView>();
+            await _navigationService.Navigate<OnboardingChildProfileView>();
         }
 
 

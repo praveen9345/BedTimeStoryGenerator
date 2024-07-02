@@ -76,6 +76,10 @@
                     }
                 }
             }
+             //External Services
+            builder.Services.AddCommunityToolkitDialogs();
+            builder.Services.AddMopupsDialogs();
+            
             return builder;
         }
 

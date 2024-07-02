@@ -5,6 +5,7 @@
     using Microsoft.Maui.Controls;
     using Microsoft.Maui.Controls.PlatformConfiguration;
     using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
+    using BedTimeStory.Components.UiFunctionality.Localization;
 
     /// <summary>
     /// The implementation of a base view that provides general logic and information needed for all views.
@@ -22,6 +23,7 @@
             BindingContext = this.ViewModel = viewModel;
             BackgroundColor = Colors.White;
             Shell.SetNavBarIsVisible(this, false);
+            BackgroundImageSource = ImageSource.FromFile("background_layout.png");
 
             On<iOS>().SetUseSafeArea(true);
 

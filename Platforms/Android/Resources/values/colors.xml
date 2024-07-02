@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#512BD4</color>
+    <color name="colorPrimary">#E8673F</color>
     <!-- status bar color-->
     <color name="colorPrimaryDark">#010F31</color>
-    <color name="colorAccent">#2B0B98</color>
+    <color name="colorAccent">#E8673F</color>
 </resources>

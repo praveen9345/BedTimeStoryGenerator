@@ -2,8 +2,7 @@
 <views:BaseView xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 xmlns:views="clr-namespace:BedTimeStory.Components.UiFunctionality.Navigation.Views;assembly=BedTimeStory"
-                x:Class="BedTimeStory.Components.CoreFeatures.Onboarding.Views.WelcomeView"
-                BackgroundImageSource="background_layout.png">    
+                x:Class="BedTimeStory.Components.CoreFeatures.Onboarding.Views.WelcomeView">    
     <views:BaseView.Content>
    <ScrollView>
         <VerticalStackLayout
@@ -20,7 +19,18 @@
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
-            <!-- Email icon Note: prifix=>&#x and ; is default-->
+
+              <!-- SignUp icon button :Note: prifix=>&#x and ; is default -->
+            <Button
+                Text="{Binding [SignUpButtonText]}"
+                Style="{StaticResource ButtonHeadline}">
+                <Button.ImageSource >
+                    <FontImageSource FontFamily="FluentIcons"
+                                     Glyph="&#xf5cd;"/>
+                </Button.ImageSource>
+            </Button>
+
+            <!-- Email icon button-->
             <Button
                 Text="{Binding [EmailButtonText]}"
                 Style="{StaticResource ButtonHeadline}">
@@ -31,7 +41,7 @@
                 </Button.ImageSource>
             </Button>
 
-             <!-- Google icon -->
+             <!-- Google icon button -->
             <Button
                 Text="{Binding [GoogleButtonText]}"
                 Style="{StaticResource ButtonHeadline}">

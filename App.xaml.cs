@@ -31,6 +31,7 @@ public partial class App : Application
 	protected override async void OnStart()
 	{
 		base.OnStart();
+		Current.UserAppTheme = AppTheme.Dark;
 		await _appService.OnStartAsync();
 	}
 

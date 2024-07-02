@@ -11,6 +11,14 @@
         <Setter Property="HorizontalTextAlignment" Value="Center" />
     </Style>
 
+    <Style TargetType="Label" x:Key="HeaderStyle">
+        <Setter Property="TextColor" Value="{DynamicResource White}" />
+        <Setter Property="FontSize" Value="25" />
+         <Setter Property="Margin" Value="20,10,0,0" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+    </Style>
+
     <Style TargetType="Label" x:Key="SubHeadline">
         <Setter Property="TextColor" Value="{DynamicResource White}" />
         <Setter Property="FontSize" Value="24" />
@@ -31,6 +39,13 @@
          <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryButtonColor}" />
         <Setter Property= "CornerRadius" Value="20" />
         <Setter Property="HorizontalOptions" Value="Fill" /> 
+    </Style>
+
+    <Style TargetType="Button" x:Key="TextFieldStyle">
+        <Setter Property="TextColor" Value="{DynamicResource White}" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="BorderColor" Value="White" />
+        <Setter Property="TextColor" Value="White" />
     </Style>
 
 <!--- not needed For this project

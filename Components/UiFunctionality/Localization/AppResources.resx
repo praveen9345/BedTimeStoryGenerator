@@ -139,6 +139,11 @@
   <value>SignUp with Google</value>
   <comment></comment>
   </data>
+
+  <data name="WelcomeViewModel_SignUpButtonText" xml:space="preserve">
+  <value>Sign up</value>
+  <comment></comment>
+  </data>
   
   <data name="WelcomeViewModel_AlreadyHaveText" xml:space="preserve">
     <value>Already have an account? Login</value>
@@ -149,4 +154,122 @@
     <value>Login</value>
     <comment></comment>
   </data>
+
+<!--RegistrationViewModel-->
+  <data name="RegistrationViewModel_HeaderText" xml:space="preserve">
+    <value>Sign Up</value>
+    <comment></comment>
+  </data>
+
+  <data name="RegistrationViewModel_UserNameText" xml:space="preserve">
+    <value>UserName</value>
+    <comment></comment>
+  </data>
+
+  <data name="RegistrationViewModel_EmailText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+
+  <data name="RegistrationViewModel_PasswordText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+
+  <data name="RegistrationViewModel_CheckBoxText" xml:space="preserve">
+    <value>Terms &amp; Conditions*</value>
+  </data>
+
+  <data name="RegistrationViewModel_TermsAcceptedText" xml:space="preserve">
+    <value>I accept the terms &amp; conditions</value>
+  </data>
+
+  <data name="RegistrationViewModel_EmailButtonText" xml:space="preserve">
+    <value>SignUp with Email</value>
+    <comment></comment>
+  </data>
+  
+  <data name="RegistrationViewModel_GoogleButtonText" xml:space="preserve">
+  <value>SignUp with Google</value>
+  <comment></comment>
+  </data>
+
+  <data name="RegistrationViewModel_SignUpButtonText" xml:space="preserve">
+  <value>Sign up</value>
+  <comment></comment>
+  </data>
+  
+  <data name="RegistrationViewModel_AlreadyHaveText" xml:space="preserve">
+    <value>Already have an account? Login</value>
+    <comment></comment>
+  </data>
+
+  <!--LoginViewModel-->
+  <data name="LoginViewModel_HeaderText" xml:space="preserve">
+    <value>Login Now</value>
+    <comment></comment>
+  </data>
+
+  <data name="LoginViewModel_EmailText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+
+  <data name="LoginViewModel_PasswordText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+
+   <data name="LoginViewModel_ForgetPasswordText" xml:space="preserve">
+    <value>Forget Password ?</value>
+  </data>
+
+  <data name="LoginViewModel_EmailButtonText" xml:space="preserve">
+    <value>SignUp with Email</value>
+    <comment></comment>
+  </data>
+  
+  <data name="LoginViewModel_GoogleButtonText" xml:space="preserve">
+  <value>SignUp with Google</value>
+  <comment></comment>
+  </data>
+
+  <!--ForgetPasswordViewModel-->
+  <data name="ForgetPasswordViewModel_HeaderText" xml:space="preserve">
+    <value>Forget Password</value>
+    <comment></comment>
+  </data>
+
+    <data name="ForgetPasswordViewModel_EmailText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+
+  <data name="ForgetPasswordViewModel_ReTypeEmailText" xml:space="preserve">
+    <value>Re-type Email</value>
+  </data>
+ <data name="ForgetPasswordViewModel_EmailButtonText" xml:space="preserve">
+    <value>Reset Password</value>
+    <comment></comment>
+  </data>
+
+   <!--Onboarding child Profile ViewModel-->
+  <data name="OnboardingChildProfileViewModel_HeaderText" xml:space="preserve">
+    <value>Child Profile</value>
+    <comment></comment>
+  </data>
+
+  <data name="OnboardingChildProfileViewModel_NameText" xml:space="preserve">
+    <value>Name</value>
+    <comment></comment>
+  </data>
+
+  <data name="OnboardingChildProfileViewModel_GenderText" xml:space="preserve">
+    <value>Gender</value>
+    <comment></comment>
+  </data>
+
+  <data name="OnboardingChildProfileViewModel_StartButtonText" xml:space="preserve">
+    <value>Get Start</value>
+    <comment></comment>
+  </data>
+
+
+
+
 </root>

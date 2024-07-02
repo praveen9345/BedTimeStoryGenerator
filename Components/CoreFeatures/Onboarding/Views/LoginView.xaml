@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views:BaseView xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:views="clr-namespace:BedTimeStory.Components.UiFunctionality.Navigation.Views;assembly=BedTimeStory"
+                xmlns:ui="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+                xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+                x:Class="BedTimeStory.Components.CoreFeatures.Onboarding.Views.LoginView">    
+    <views:BaseView.Content>
+        <ScrollView Orientation="Vertical">
+        <VerticalStackLayout>
+         <!-- Back button -->
+         <Image
+                Margin="5,10,0,0"
+                HeightRequest="30"
+                Aspect="AspectFit"
+                HorizontalOptions="Start">
+                <Image.Source >
+                    <FontImageSource 
+                        FontFamily="FluentIcons"
+                        Glyph="&#xf2ab;"/>
+                </Image.Source>
+                </Image>
+
+             <!-- Header -->
+            <Label
+                Text="{Binding [HeaderText]}"
+                Style="{StaticResource HeaderStyle}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <!-- Login Now -->
+            <StackLayout Padding="20,150,20,20" Spacing ="30">
+            <!-- Email Text Lable-->
+            <ui:TextField 
+                Title="{Binding [EmailText]}"
+                TitleColor="White"
+                BorderColor="White"
+                TextColor="White"
+                AccentColor="#E8673F" />
+            <!-- Password Text Label -->
+            <ui:TextField 
+               Title="{Binding [PasswordText]}"
+               TitleColor="White"
+               BorderColor="White"
+               TextColor="White"
+               AccentColor="#E8673F">
+               <ui:TextField.Attachments>
+                 <ui:TextFieldPasswordShowHideAttachment/>
+                 </ui:TextField.Attachments>
+               </ui:TextField>
+            </StackLayout>
+
+            <!-- Forget password button -->
+            <Button
+                Margin="0,-20,0,0" 
+                StyleClass="TextButton"
+                Text="{Binding [ForgetPasswordText]}"
+                TextColor="{StaticResource White}"
+                FontSize ="14"
+                HorizontalOptions="End"/>
+
+            <StackLayout Padding="20,100,20,20" Spacing ="30">
+            <!-- Email icon button-->
+            <Button
+                Text="{Binding [EmailButtonText]}"
+                Style="{StaticResource ButtonHeadline}">
+                <Button.ImageSource >
+                    <FontImageSource 
+                        FontFamily="FluentIcons"
+                        Glyph="&#xf511;"/>
+                </Button.ImageSource>
+            </Button>
+
+             <!-- Google icon button -->
+            <Button
+                Text="{Binding [GoogleButtonText]}"
+                Style="{StaticResource ButtonHeadline}">
+                <Button.ImageSource >
+                    <FontImageSource FontFamily="FluentIcons"
+                                     Glyph="&#xf718;"/>
+                </Button.ImageSource>
+            </Button>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    </views:BaseView.Content>
+</views:BaseView>
+
+
+           
