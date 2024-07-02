@@ -42,16 +42,22 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation
         /// <typeparam name="T"> The class of the page. </typeparam>
         /// <param name="parameter"> The parameter to pass. </param>
         /// <returns> An awaitable task. </returns>
-        public async Task Navigate<T>(object parameter) where T : Page
+        public async Task Navigate<T>(object parameter, bool fromRoot = false) where T : Page
         {
             var dictionary = new Dictionary<string, object>()
             {
                 {"parameter", parameter}
             };
+
+            if(fromRoot)
+            {
+                await _shellWrapper.PopToRootAsync(true);
+            }
             await _shellWrapper.GoToAsync( GetShellPath<T>(), false, dictionary);
         }
 
-        private string GetShellPath<T>(){
+        private string GetShellPath<T>()
+        {
             var name = typeof(T).Name;
             var location = _shellWrapper.GetCurrentState().Location.ToString();
 

@@ -36,5 +36,16 @@
         {
             return Shell.Current.CurrentState;
         }
+
+        /// <summary>
+        /// A task for asyncronization poping allpages off of the navigation stack.
+        /// </summary>
+        /// <param name="animate">Determines whether the navigation should be animated.</param>
+        /// <returns>The current <see cref="ShellNavigationState"/>.</returns>
+        public Task PopToRootAsync(bool animation)
+        {
+            return Shell.Current.Navigation.PopToRootAsync(animation);
+        }
+
     }
 }

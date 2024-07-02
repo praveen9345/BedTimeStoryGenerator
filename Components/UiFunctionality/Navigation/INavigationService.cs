@@ -17,8 +17,9 @@ namespace BedTimeStory.Components.UiFunctionality.Navigation
         /// </summary>
         /// <typeparam name="T"> The class of the page. </typeparam>
         /// <param name="parameter"> The parameter to pass. </param>
+        /// <param name="fromRoot"> Optionally reset the view stack. </param>
         /// <returns> An awaitable task. </returns>
-        Task Navigate<T>(object parameter) where T : Page;
+        Task Navigate<T>(object parameter, bool fromRoot) where T : Page;
 
         /// <summary>
         ///     This method navigates to a specific page of type T asynchronously.

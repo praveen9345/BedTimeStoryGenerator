@@ -29,5 +29,12 @@
         /// <returns>The current <see cref="ShellNavigationState"/>.</returns>
         public ShellNavigationState GetCurrentState();
 
+        /// <summary>
+        /// A task for asyncronization poping allpages off of the navigation stack.
+        /// </summary>
+        /// <param name="animate">Determines whether the navigation should be animated.</param>
+        /// <returns>The current <see cref="ShellNavigationState"/>.</returns>
+        Task PopToRootAsync(bool animation);
+
     }
 }
